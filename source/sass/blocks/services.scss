@@ -1,0 +1,47 @@
+.services {
+    background-color: $bg-color;
+
+    min-height: 938px;
+
+    &__header-text {
+        color: $white;
+        font-size: 36px;
+        margin-top: 55px;
+        margin-top: 93px;
+    }
+
+    &__text-item {
+        color: $white;
+        margin-left: 45px;
+        margin-top: 55px;
+    }
+
+    &__blocks {
+        display: flex;
+        flex-direction: row;
+    }
+
+    &__left {
+        background:linear-gradient(to right, $blue-shadow, $blue-shadow), url("../img/left-image@1x.jpg");
+        min-width: 370px;
+        min-height: 620px;
+        margin: 20px;
+        font-size: 20px;
+    }
+
+    &__center {
+        background:linear-gradient(to right, $blue-shadow, $blue-shadow), url("../img/center-image@1x.jpg");
+        min-width: 370px;
+        min-height: 620px;
+        margin: 20px;
+        font-size: 20px;
+    }
+
+    &__right {
+        background:linear-gradient(to right, $blue-shadow, $blue-shadow), url("../img/right-image@1x.jpg");
+        min-width: 370px;
+        min-height: 620px;
+        margin: 20px;
+        font-size: 20px;
+    }
+}

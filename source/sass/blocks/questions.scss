@@ -1,0 +1,13 @@
+.questions {
+    background-image: url("../img/questions-background@1x.png");
+    background-color: $blue;
+    min-height: 670px;
+
+    &__right {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-height: 400px;
+        margin-left: 30%;
+    }
+}

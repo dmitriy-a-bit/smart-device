@@ -1,7 +1,7 @@
 {
-  "name": "supergym",
+  "name": "smartdevice",
   "version": "1.0.0",
-  "description": "Проект: Фитнес-центр - SuperGym ",
+  "description": "Проект: Smart Device - умные технологии ",
   "devDependencies": {
     "@htmlacademy/editorconfig-cli": "1.x",
     "autoprefixer": "9.5.x",
