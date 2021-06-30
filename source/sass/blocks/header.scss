@@ -55,7 +55,32 @@
         border: solid 1px $white;
         color: $white;
         background-color: transparent;
-        border-radius: 5px;    
+        border-radius: 5px;
+    }
+
+    &__email:hover a,
+    &__phone:hover a {
+        color: $blue;
+    }
+
+    &__call:hover {
+        background-color: $blue;
+        color: $white;
+    }
+
+    &__call:active {
+        background-color: $dark-blue;
+
+    }
+
+    &__consultation:hover {
+        background-color: transparent;
+        color: $white;
+        border: solid 1px $white;
+    }
+
+    &__consultation:active {
+        background-color: $dark-blue;
     }
 
     &__bottom {
@@ -63,7 +88,7 @@
         flex-direction: row;
         padding-top: 180px;
     }
-    
+
     &__boards {
         display: flex;
         flex-direction: column;
@@ -111,5 +136,24 @@
         align-items: center;
     }
 
+    @media (max-width: $only-desktop) {
+        &__top {
+            min-width: 80%;
+        }
+
+        &__logo {
+            min-width: 250px;
+        }
+
+        &__info {
+            padding-left: 20px;
+            min-width: 450px;
+        }
+
+    }
+
+    // @media (max-width: $mobile-width) {}
+
+    // @media (max-width: $small-mobile-width) {}
 
 }

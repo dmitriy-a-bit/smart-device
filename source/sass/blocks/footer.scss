@@ -1,0 +1,148 @@
+.footer {
+
+    &__top {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        align-content: space-between;
+        min-width: 1411px;
+        max-height: 200px;
+        gap: 0px;
+        padding-top: 50px;
+        grid-template-areas:
+            "logo about about2 phones"
+            "social about about2 phones";
+    }
+
+    &__bottom {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+        align-content: space-between;
+        min-width: 1411px;
+        grid-template-areas:
+            "rights devices confidentiality developed-by";
+    }
+
+    &__logo {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        grid-area: logo;
+        width: 190px;
+        height: 100px;
+        padding-top: 20px;
+    }
+
+    &__logo h3 {
+        margin-top: 0px;
+        line-height: 0px;
+        padding-top: 10px;
+    }
+
+    &__logo span {
+        margin-top: 200px;
+    }
+
+    &__social {
+        grid-area: social;
+        width: 100px;
+        height: 100px;
+
+    }
+
+    &__about {
+        grid-area: about;
+        width: 170px;
+        height: 100px;
+    }
+
+    &__about2 {
+        grid-area: about2;
+        width: 150px;
+        height: 100px;
+        padding-top: 40px;
+    }
+
+    &__phones {
+        grid-area: phones;
+        width: 300px;
+        height: 100px;
+    }
+
+    &__line {
+        border-top: solid $grey 2px;
+        width: 100%;
+    }
+
+    &__rights {
+        grid-area: rights;
+        width: 250px;
+        height: 50px;
+    }
+
+    &__devices {
+        grid-area: devices;
+        width: 250px;
+        height: 50px;
+    }
+
+    &__confidentiality {
+        grid-area: confidentiality;
+        width: 300px;
+        height: 50px;
+    }
+
+    &__developed-by {
+        grid-area: developed-by;
+        width: 250px;
+        height: 50px;
+    }
+
+    &__about ul,
+    &__about2 ul,
+    &__phones ul,
+    &__rights li,
+    &__devices li,
+    &__confidentiality li,
+    &__developed-by li {
+        list-style: none;
+        padding: 0;
+        color: gray;
+    }
+
+    &__about a,
+    &__about2 a,
+    &__phones a,
+    &__confidentiality a,
+    &__developed-by a {
+        color: gray;
+    }
+
+    &__fb,
+    &__ok,
+    &__vk {
+        fill: $icons;
+    }
+
+    &__fb:hover,
+    &__ok:hover,
+    &__vk:hover {
+        fill: $blue;
+    }
+
+    // @media (max-width: $only-desktop) {}
+
+    // @media (max-width: $mobile-width) {}
+
+    // @media (max-width: $small-mobile-width) {}
+
+}
+
+footer a:hover {
+    color: $blue;
+}
+
+footer a:active {
+    color: $dark-blue;
+}

@@ -32,7 +32,11 @@
         border-right: solid 3px $grey;
         border-bottom: solid 3px $grey;
         background-color: $white;
+    }
 
+    &__card:hover {
+        background-color: $blue;
+        color: $white;
 
     }
 
@@ -49,10 +53,12 @@
         flex-direction: row;
         align-items: center;
         max-width: 1200px;
+        padding-bottom: 100px;
     }
 
     &__year-image {
-        min-width: 220px;
+        min-width: 200px;
+        height: auto;
     }
 
     &__about p {
@@ -67,4 +73,20 @@
         background-color: transparent;
         border-radius: 5px;
     }
+
+    &__button:hover {
+        color: $white;
+        background-color: $blue;
+    }
+
+    &__button:active {
+        color: $white;
+        background-color: $dark-blue;
+    }
+
+    // @media (max-width: $only-desktop) {}
+
+    // @media (max-width: $mobile-width) {}
+
+    // @media (max-width: $small-mobile-width) {}
 }

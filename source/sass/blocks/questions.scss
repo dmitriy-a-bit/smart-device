@@ -9,5 +9,89 @@
         justify-content: space-between;
         min-height: 400px;
         margin-left: 30%;
+        margin-top: 100px;
     }
+
+    &__header {
+        font-size: 36px;
+        color: $white;
+    }
+
+    &__text {
+        font-family: "PT Mono";
+        font-size: 16px;
+        color: $white;
+    }
+
+    &__form input::placeholder,
+    &__form textarea::placeholder {
+        color: $white;
+        font-family: "PT Mono";
+        padding: 10px;
+    }
+
+    &__form-top {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__form-name,
+    &__form-phone {
+        width: 270px;
+        height: 50px;
+        background: linear-gradient(to right, $blue-form, $blue-form);
+        color: $white;
+        border: none;
+    }
+
+    &__form-question {
+        width: 570px;
+        height: 154px;
+        background: linear-gradient(to right, $blue-form, $blue-form);
+        color: $white;
+        border: none;
+        margin-top: 40px;
+    }
+
+    &__button-area {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__button-area {
+        background: $blue;
+    }
+
+    &__form-button {
+        background: transparent;
+        border-radius: 5px;
+        border: solid $white 1px;
+        color: $white;
+        width: 270px;
+        height: 45px;
+    }
+
+    &__form-button:active {
+        background: $dark-blue;
+        border: solid $dark-blue 1px;
+    }
+
+    &__form-button:hover {
+        background: $white;
+        color: $blue;
+    }
+
+    &__button-area p {
+        color: $white;
+        font-family: "PT Mono";
+        margin-left: -40px;
+    }
+
+    // @media (max-width: $only-desktop) {}
+
+    // @media (max-width: $mobile-width) {}
+
+    // @media (max-width: $small-mobile-width) {}
 }
