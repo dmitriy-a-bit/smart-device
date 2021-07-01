@@ -1,26 +1,17 @@
 .footer {
 
-    &__top {
+    &__grid {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
         align-content: space-between;
-        min-width: 1411px;
+        min-width: 90%;
         max-height: 200px;
-        gap: 0px;
         padding-top: 50px;
         grid-template-areas:
-            "logo about about2 phones"
-            "social about about2 phones";
-    }
-
-    &__bottom {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        grid-template-rows: 1fr;
-        align-content: space-between;
-        min-width: 1411px;
-        grid-template-areas:
+            "logo about contacts phones"
+            "social about contacts phones"
+            "line line line line"
             "rights devices confidentiality developed-by";
     }
 
@@ -57,8 +48,8 @@
         height: 100px;
     }
 
-    &__about2 {
-        grid-area: about2;
+    &__contacts {
+        grid-area: contacts;
         width: 150px;
         height: 100px;
         padding-top: 40px;
@@ -71,6 +62,19 @@
     }
 
     &__line {
+        grid-area: line;
+        border-top: solid $grey 2px;
+        width: 100%;
+    }
+
+    &__line2 {
+        grid-area: line2;
+        border-top: solid $grey 2px;
+        width: 100%;
+    }
+
+    &__line3 {
+        grid-area: line3;
         border-top: solid $grey 2px;
         width: 100%;
     }
@@ -99,8 +103,16 @@
         height: 50px;
     }
 
+    &__rights,
+    &__devices,
+    &__confidentiality,
+    &__developed-by {
+        width: 100%;
+        height: 100%;
+    }
+
     &__about ul,
-    &__about2 ul,
+    &__contacts ul,
     &__phones ul,
     &__rights li,
     &__devices li,
@@ -112,7 +124,7 @@
     }
 
     &__about a,
-    &__about2 a,
+    &__contacts a,
     &__phones a,
     &__confidentiality a,
     &__developed-by a {
@@ -131,18 +143,152 @@
         fill: $blue;
     }
 
-    // @media (max-width: $only-desktop) {}
+    a:hover {
+        color: $blue;
+    }
 
-    // @media (max-width: $mobile-width) {}
+    a:active {
+        color: $dark-blue;
+    }
+
+
+    @media (max-width: $only-desktop) {
+
+        &__top,
+        &__bottom {
+            min-width: 90%;
+        }
+
+        &__phones {
+            width: 170px;
+        }
+
+        &__rights,
+        &__devices,
+        &__confidentiality,
+        &__developed-by {
+            width: 100%;
+        }
+
+        &__bottom-item {
+            font-size: 14px;
+        }
+    }
+
+    @media (max-width: $mobile-width) {
+        &__grid {
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 2px 1fr 1fr 2px 1fr;
+            align-content: space-between;
+            max-height: 200px;
+            gap: 0px;
+            padding-top: 50px;
+            grid-template-areas:
+                "logo devices social"
+                "line line line"
+                "about about phones"
+                "contacts . ."
+                "line2 line2 line2"
+                "confidentiality confidentiality developed-by";
+        }
+
+        &__rights {
+            display: none;
+        }
+
+        &__about {
+            min-height: 120px;
+        }
+
+        &__logo {
+            padding-left: 20px;
+        }
+
+        &__devices {
+            border-top: none;
+        }
+
+        &__social {
+            padding-left: 20px;
+        }
+
+        &__logo,
+        &__devices,
+        &__social {
+            width: 100%;
+            height: 100%;
+            padding-top: 0;
+        }
+
+        &__confidentiality,
+        &__developed-by {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    @media (max-width: $mobile-low-width) {
+
+        &__grid {
+            grid-template-columns: 1fr;
+            grid-template-rows: 60px 50px 50px 2px 150px 70px 2px 200px 2px 50px 50px;
+            align-content: space-between;
+            max-height: 1100px;
+            gap: 0px;
+            padding-top: 50px;
+            grid-template-areas:
+                "logo"
+                "devices"
+                "social"
+                "line"
+                "about"
+                "contacts"
+                "line2"
+                "phones"
+                "line3"
+                "confidentiality"
+                "developed-by";
+
+        }
+
+        &__logo,
+        &__social {
+            width: 190px;
+            margin: auto;
+            border-bottom: none;
+        }
+
+        &__about,
+        &__phones {
+            min-height: 200px;
+            min-width: 250px;
+        }
+
+        &__contacts {
+            height: 70px;
+            margin-top: -20px;
+            padding-top: 0;
+        }
+
+        &__confidentiality,
+        &__developed-by {
+            min-height: 100px;
+        }
+
+        &__social {
+            padding-left: calc(50% - 40px);
+        }
+
+        &__devices,
+        &__confidentiality,
+        &__developed-by {
+            max-width: 270px;
+            height: 50px;
+            padding-left: calc(50% - 110px);
+            border-bottom: none;
+        }
+    }
 
     // @media (max-width: $small-mobile-width) {}
 
-}
-
-footer a:hover {
-    color: $blue;
-}
-
-footer a:active {
-    color: $dark-blue;
 }

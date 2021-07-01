@@ -94,7 +94,6 @@
         flex-direction: column;
         justify-content: space-between;
         max-height: 300px;
-
     }
 
     &__boards h1 {
@@ -150,10 +149,100 @@
             min-width: 450px;
         }
 
+        &__boards {
+            max-height: 400px;
+            padding-left: 40px;
+        }
+
+        &__boards h1 {
+            line-height: 80px;
+        }
+
+        &__text-production {
+            margin-top: -40px;
+            padding-bottom: 20px;
+        }
+
     }
 
-    // @media (max-width: $mobile-width) {}
+    @media (max-width: $mobile-width) {
+        min-height: 950px;
 
-    // @media (max-width: $small-mobile-width) {}
+        &__bottom {
+            flex-direction: column-reverse;
+            padding-top: 60px;
+        }
+
+        &__boards {
+            margin-top: -60px;
+        }
+
+        &__email-text,
+        &__phone-text,
+        &__call {
+            display: none;
+        }
+
+        &__logo {
+            min-width: 80%;
+        }
+
+        &__info {
+            padding-left: 40px;
+            min-width: 20%;
+        }
+
+        &__envelope {
+            width: 36px;
+            height: 36px;
+        }
+
+
+    }
+
+    @media (max-width: $mobile-low-width) {
+        min-height: 800px;
+
+        &__top {
+            max-width: 80%;
+            padding-top: 20px;
+        } 
+        &__logo {
+            min-width: 60%;
+        }
+
+        &__brain-text {
+            min-width: 20px;
+        }
+
+
+        &__text {
+            display: none;
+        }
+
+        &__info {
+            width: 80px;
+            padding: 0;
+        }
+
+        &__consultation {
+            min-width: 90%;
+            margin: auto;
+        }
+
+        &__boards h1 {
+            font-size: 36px;
+            padding: 20px;
+            line-height: 40px;
+        }
+
+        &__boards {
+            padding: 20px;
+        }
+
+
+    }
+
+    @media (max-width: $mobile-small-width) {}
 
 }
