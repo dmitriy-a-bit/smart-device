@@ -2,12 +2,16 @@
   "name": "smartdevice",
   "version": "1.0.0",
   "description": "Проект: Smart Device - умные технологии ",
+  "homepage": "https://dmitriy-a-bit.github.io/smart-device/",
   "devDependencies": {
     "@htmlacademy/editorconfig-cli": "1.x",
     "autoprefixer": "9.5.x",
     "browser-sync": "2.26.x",
+    "eslint": "4.16.0",
+    "eslint-config-htmlacademy": "0.4.x",
     "gulp": "4.0.x",
     "gulp-csso": "^3.0.1",
+    "gulp-gh-pages": "^0.5.4",
     "gulp-imagemin": "^5.0.3",
     "gulp-plumber": "1.2.x",
     "gulp-postcss": "8.0.x",
@@ -20,12 +24,9 @@
     "pixel-glass": "^1.0.13",
     "posthtml-include": "^1.2.0",
     "stylelint": "9.10.x",
-    "stylelint-config-htmlacademy": "0.1.x",
-    "eslint": "4.16.0",
-    "eslint-config-htmlacademy": "0.4.x"
+    "stylelint-config-htmlacademy": "0.1.x"
   },
   "scripts": {
-    "homepage": "https://dmitriy-a-bit.github.io/smart-device/",
     "editorconfig": "editorconfig-cli",
     "stylelint": "stylelint \"source/sass/**/*.scss\" --syntax scss",
     "test": "npm run editorconfig && npm run stylelint && eslint source/js/",
@@ -33,7 +34,6 @@
     "start": "gulp start",
     "webp": "gulp webp",
     "sprite": "gulp sprite",
-    "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
   "browserslist": [

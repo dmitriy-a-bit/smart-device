@@ -1,4 +1,5 @@
 # Smart Device умные технологии
+Продукт на Github Pages [ЗДЕСЬ](https://dmitriy-a-bit.github.io/smart-device/)
 ## Краткая инструкция по работе
 ### Для начала работы у вас должент быть установлен:
 * Node.js v.10.15.3
