@@ -1,13 +1,13 @@
 .services {
     background-color: $bg-color;
-
     min-height: 938px;
 
     &__header-text {
         color: $white;
+        min-width: 1200px;
         font-size: 36px;
-        margin-top: 55px;
         margin-top: 93px;
+        text-align: left;
     }
 
     &__text-item {
@@ -17,32 +17,26 @@
     }
 
     &__blocks {
-        display: flex;
-        flex-direction: row;
+        @include flex(row, space-between);
+        max-width: 1150px;
+    }
+
+    &__cards-size {
+        max-width: 370px;
+        min-height: 620px;
+        font-size: 20px;
     }
 
     &__left {
         background: linear-gradient(to right, $blue-shadow, $blue-shadow), url("../img/left-image@1x.jpg");
-        min-width: 370px;
-        min-height: 620px;
-        margin: 20px;
-        font-size: 20px;
     }
 
     &__center {
         background: linear-gradient(to right, $blue-shadow, $blue-shadow), url("../img/center-image@1x.jpg");
-        min-width: 370px;
-        min-height: 620px;
-        margin: 20px;
-        font-size: 20px;
     }
 
     &__right {
         background: linear-gradient(to right, $blue-shadow, $blue-shadow), url("../img/right-image@1x.jpg");
-        min-width: 370px;
-        min-height: 620px;
-        margin: 20px;
-        font-size: 20px;
     }
 
     @media (max-width: $only-desktop) {
@@ -50,38 +44,56 @@
             min-width: 80%;
         }
 
-        &__left,
-        &__center,
-        &__right {
+        &__cards-size {
             min-width: 30%;
         }
 
         &__header-text {
             font-size: 28px;
+            min-width: 1150px;
+        }
+    }
+
+    @media (max-width: $table-width) {
+        &__header-text {
+            min-width: 80%;
         }
 
-
+        &__blocks {
+            max-width: 80%;
+        }
     }
 
     @media (max-width: $mobile-width) {
         &__blocks {
             flex-direction: column;
             min-width: 100%;
+            max-height: 1300px;
+            padding-left: 5%;
+            padding-bottom: 30px;
+
         }
 
-        &__left,
-        &__center,
-        &__right {
-            min-width: 80%;
-            min-height: 300px;
+        &__cards-size {
+            min-width: 90%;
             background-size: 100% 130%;
+            min-height: 300px;
+
+
         }
 
         &__header-text {
             line-height: 30px;
             padding: 20px;
+            min-width: 95%;
+        }
+
+    }
+
+    @media (max-width: $mobile-low-width) {
+        &__cards-size {
+            max-width: 270px;
         }
     }
 
-    // @media (max-width: $small-mobile-width) {}
 }

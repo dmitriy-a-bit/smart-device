@@ -60,10 +60,10 @@
 
       <div class="header__bottom">
         <div class="header__boards">
-          <h1>ПЕЧАТНЫЕ ПЛАТЫ</h1>
+          <h1 class="header__h1">ПЕЧАТНЫЕ ПЛАТЫ</h1>
           <div class="header__text-production">
             <div class="header__dash"></div>
-            <span>производство и монтаж, поставка комплектующих, блоков и модулей</span>
+            <span class="header__span">производство и монтаж, поставка комплектующих, блоков и модулей</span>
           </div>
           <button class="header__consultation" type="submit">ПОЛУЧИТЬ БЕСПЛАТНУЮ КОНСУЛЬТАЦИЮ</button>
         </div>
@@ -84,39 +84,51 @@
         <div class="wrapper">
           <div class="description__cards">
             <div class="description__card">
-              <div class="description__card-inside"><svg class="description__icon-stopwatch" width="29" height="35">
-                  <use xlink:href="img/sprite_auto.svg#icon-stopwatch"></use>
-                </svg>
+              <div class="description__card-inside"> <span class="description__icon-stopwatch">
+                  <svg class="description__icon-svg" width="29" height="35">
+                    <use xlink:href="img/sprite_auto.svg#icon-stopwatch"></use>
+                  </svg></span>
                 <h2>Оперативные сроки</h2>
-                <p>Усовершенствованная логистическая система позволяет нам просчитывать стоимость, производить и
+                <p class="description__ptmono">Усовершенствованная логистическая система позволяет нам просчитывать
+                  стоимость, производить и
                   доставлять
                   заказы плат и комплектующих в самые короткие сроки</p>
               </div>
             </div>
             <div class="description__card">
-              <div class="description__card-inside"><svg class="description__icon-hired" width="35" height="35">
-                  <use xlink:href="img/sprite_auto.svg#icon-hired"></use>
-                </svg>
+              <div class="description__card-inside"> <span class="description__icon-hired">
+                  <svg class="description__icon-svg" width="35" height="35">
+                    <use xlink:href="img/sprite_auto.svg#icon-hired"></use>
+                  </svg>
+                </span>
                 <h2>Крупные поставщики</h2>
-                <p>Нашими поставщиками являются такие крупные мировые компании как: OSRAM, CREE, HOLGLITRONIC, REFOND.
+                <p class="description__ptmono">Нашими поставщиками являются такие крупные мировые компании как: OSRAM,
+                  CREE, HOLGLITRONIC, REFOND.
                   Сотрудничество с такими компаниями обеспичивает хорошее качество нашей продукции. </p>
               </div>
             </div>
             <div class="description__card">
-              <div class="description__card-inside"><svg class="description__icon-detective" width="36" height="31">
-                  <use xlink:href="img/sprite_auto.svg#icon-detective"></use>
-                </svg>
+              <div class="description__card-inside"><span class="description__icon-detective">
+                  <svg class="description__icon-svg" width="36" height="31">
+                    <use xlink:href="img/sprite_auto.svg#icon-detective"></use>
+                  </svg>
+                </span>
                 <h2>Полная конфиденциальность</h2>
-                <p>По желанию клиента мы обеспечиваем полную конфеденциальность.
+                <p class="description__ptmono">По желанию клиента мы обеспечиваем полную конфеденциальность.
                 </p>
               </div>
             </div>
             <div class="description__card">
-              <div class="description__card-inside"><svg class="description__icon-tag" width="36" height="31">
-                  <use xlink:href="img/sprite_auto.svg#icon-tag"></use>
-                </svg>
+              <div class="description__card-inside"> <span class="description__icon-tag">
+                  <span>
+                    <svg class="description__icon-svg" width="36" height="31">
+                      <use xlink:href="img/sprite_auto.svg#icon-tag"></use>
+                    </svg>
+                  </span>
+                </span>
                 <h2>Персонализация стоимости</h2>
-                <p>Мы подбираем определенную фабрику, поставщиков, вид доставки, чтобы установить ту цену, которая Вас
+                <p class="description__ptmono">Мы подбираем определенную фабрику, поставщиков, вид доставки, чтобы
+                  установить ту цену, которая Вас
                   устраивает. </p>
               </div>
             </div>
@@ -131,7 +143,8 @@
             </div>
             <div class="description__about">
               <h2>О компании</h2>
-              <p>Мы поставляем электронные комплектующие, производим печатные платы и предоставляем мировые технологии с
+              <p class="description__ptmono">Мы поставляем электронные комплектующие, производим печатные платы и
+                предоставляем мировые технологии с
                 1997 года. Выполняем срочные заказы и пилотные образцы до 10 дней.
 
                 Наши поставщики - мировые производители электронных компонентов: OSRAM, CREE, HOLGLITRONIC, REFOND.
@@ -150,19 +163,22 @@
       <div class="services">
         <div class="wrapper">
           <h2 class="services__header-text">Service Device предлагает следующие товары и услуги</h2>
-          <div class="services__blocks">
-            <div class="services__left">
-              <p class="services__text-item">Производство<br> печатных плат</p>
-              <div></div>
+          <div class="services__blocks swiper-container">
+            <div class="swiper-wrapper">
+              <div class="services__left services__cards-size swiper-slide">
+                <p class="services__text-item">Производство<br> печатных плат</p>
+                <div></div>
+              </div>
+              <div class="services__center services__cards-size swiper-slide">
+                <p class="services__text-item">Монтаж печатных<br> плат</p>
+                <div></div>
+              </div>
+              <div class="services__right services__cards-size swiper-slide">
+                <p class="services__text-item">Комплектующие<br> для светотехники</p>
+                <div></div>
+              </div>
             </div>
-            <div class="services__center">
-              <p class="services__text-item">Монтаж печатных<br> плат</p>
-              <div></div>
-            </div>
-            <div class="services__right">
-              <p class="services__text-item">Комплектующие<br> для светотехники</p>
-              <div></div>
-            </div>
+
           </div>
         </div>
       </div>
@@ -180,17 +196,19 @@
                 <input class="questions__form-name" type="text" placeholder="Имя">
                 <input class="questions__form-phone" type="tel" placeholder="Телефон">
               </div>
-              <textarea class="questions__form-question" placeholder="Ваш вопрос"></textarea><br>
+              <textarea class="questions__form-question" placeholder="Ваш вопрос"></textarea>
               <div class="questions__button-area">
                 <div>
                   <button class="questions__form-button" type="submit">ЗАДАТЬ ВОПРОС</button>
                 </div>
                 <div class="questions__checkbox-area">
                   <div>
-                    <input class="questions__checkbox" type="checkbox" checked>
+
+                    <input class="questions__checkbox" id="questions__input" type="checkbox" checked>
+                    <label for="questions__input"></label>
                   </div>
                   <div>
-                    <p>Я согласен на обработку<br> персональных данных</p>
+                    <p class="questions__agree">Я согласен на обработку<br> персональных данных</p>
                   </div>
                 </div>
               </div>
@@ -214,8 +232,8 @@
             </svg>
           </a>
           <div>
-            <h3>Smart Device</h3>
-            <span>умные технологии</span>
+            <h3 class="footer__h3">Smart Device</h3>
+            <span class="footer__smart">умные технологии</span>
           </div>
         </div>
 
@@ -237,25 +255,27 @@
 
         <div class="footer__about">
           <div class="footer__site-sections">
-            <h3>РАЗДЕЛЫ САЙТА</h3>
+            
+              <h3>РАЗДЕЛЫ САЙТА</h3>
+            </button>
           </div>
-          <div class="footer__sections">
+          <div class="footer__sections panel">
             <div class="footer__about-info">
-              <ul>
-                <li class="footer__item"><a class="footer__text" href="#">О компании</a></li>
-                <li class="footer__item"><a class="footer__text" href="#">Продукты</a></li>
-                <li class="footer__item"><a class="footer__text" href="#">Производство печатных плат</a></li>
-                <li class="footer__item"><a class="footer__text" href="#">Монтаж печатных плат</a></li>
+              <ul class="footer__list">
+                <li class="footer__item"><a class="footer__grey-color" href="#">О компании</a></li>
+                <li class="footer__item"><a class="footer__grey-color" href="#">Продукты</a></li>
+                <li class="footer__item"><a class="footer__grey-color" href="#">Производство печатных плат</a></li>
+                <li class="footer__item"><a class="footer__grey-color" href="#">Монтаж печатных плат</a></li>
               </ul>
             </div>
           </div>
         </div>
 
         <div class="footer__contacts">
-          <ul>
-            <li class="footer__item"><a class="footer__text" href="#">Комплектующие</a></li>
-            <li class="footer__item"><a class="footer__text" href="#">Доставка</a></li>
-            <li class="footer__item"><a class="footer__text" href="#">Контакты</a></li>
+          <ul class="footer__list">
+            <li class="footer__item"><a class="footer__grey-color" href="#">Комплектующие</a></li>
+            <li class="footer__item"><a class="footer__grey-color" href="#">Доставка</a></li>
+            <li class="footer__item"><a class="footer__grey-color" href="#">Контакты</a></li>
           </ul>
         </div>
 
@@ -264,42 +284,42 @@
             <h3>НАШ ОФИС</h3>
           </div>
           <div class="footer__info">
-            <ul>
+            <ul class="footer__list">
               <li>г. Мытищи, Олимпийский проспект, д.10 </li>
-              <li><a href="tel:+74955894050">+7 (495) 589-40-50</a></li>
-              <li><a href="tel:+79250038767">+7 (925) 003-87-67</a></li>
-              <li><a href="tel:+792692608079">+7 (926) 926-080-79</a></li>
+              <li><a class="footer__grey-color" href="tel:+74955894050">+7 (495) 589-40-50</a></li>
+              <li><a class="footer__grey-color" href="tel:+79250038767">+7 (925) 003-87-67</a></li>
+              <li><a class="footer__grey-color" href="tel:+792692608079">+7 (926) 926-080-79</a></li>
             </ul>
           </div>
         </div>
 
-        <div class="footer__line"></div>
+        <div class="footer__line footer__lines"></div>
 
-        <div class="footer__line2"></div>
+        <div class="footer__line2 footer__lines"></div>
 
-        <div class="footer__line3"></div>
+        <div class="footer__line3 footer__lines"></div>
 
         <div class="footer__rights">
-          <ul>
+          <ul class="footer__list">
             <li class="footer__bottom-item">ВCЕ ПРАВА ЗАЩИЩЕНЫ</li>
           </ul>
         </div>
 
         <div class="footer__devices">
-          <ul>
+          <ul class="footer__list">
             <li class="footer__bottom-item">1999-2018 SD SERVICE DEVICES</li>
           </ul>
         </div>
 
         <div class="footer__confidentiality">
-          <ul>
-            <li class="footer__bottom-item"><a href="#">УСЛОВИЯ КОНФИДЕНЦИАЛЬНОСТИ</a></li>
+          <ul class="footer__list">
+            <li class="footer__bottom-item"><a class="footer__grey-color" href="#">УСЛОВИЯ КОНФИДЕНЦИАЛЬНОСТИ</a></li>
           </ul>
         </div>
 
         <div class="footer__developed-by">
-          <ul>
-            <li class="footer__bottom-item"><a href="#">DEVELOPED BY WOW STUDIO </a></li>
+          <ul class="footer__list">
+            <li class="footer__bottom-item"><a class="footer__grey-color" href="#">DEVELOPED BY WOW STUDIO </a></li>
           </ul>
         </div>
       </div>
@@ -310,6 +330,59 @@
   <script src="js/vendor/input-mask.js"></script>
   <script src="js/vendor/swiper-bundle.min.js"></script>
   <script src="js/main.js"></script>
+
+  <script>
+    const swiper = new Swiper('.swiper-container', {
+      loop: true,
+      spaceBetween: 30,
+      breakpoints: {
+        769: {
+          direction: 'horizontal',
+          slidesPerView: 3,
+        },
+        270: {
+          direction: 'vertical',
+          slidesPerView: 3,
+          spaceBetween: 40,
+        }
+      }
+
+    });
+
+    //Accordion code
+    // let acc = document.getElementsByClassName("accordion");
+    // let i;
+
+    // for (i = 0; i < acc.length; i++) {
+    //   acc[i].addEventListener("click", function () {
+    //     this.classList.toggle("active");
+    //     let panel = this.nextElementSibling;
+    //     if (panel.style.maxHeight) {
+    //       panel.style.maxHeight = null;
+    //     } else {
+    //       panel.style.maxHeight = panel.scrollHeight + "px";
+    //     }
+    //   });
+    // }
+    //Accordion code
+  </script>
+  <script>
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+
+    for (i = 0; i < acc.length; i++) {
+      acc[i].addEventListener("click", function () {
+        this.classList.toggle("active");
+        var panel = this.nextElementSibling;
+        if (panel.style.maxHeight) {
+          panel.style.maxHeight = null;
+        } else {
+          panel.style.maxHeight = panel.scrollHeight + "px";
+        }
+      });
+    }
+  </script>
+
 </body>
 
 </html>
