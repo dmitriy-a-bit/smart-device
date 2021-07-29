@@ -253,13 +253,14 @@
         </div>
 
 
-        <div class="footer__about">
-          <div class="footer__site-sections">
-            
-              <h3>РАЗДЕЛЫ САЙТА</h3>
-            </button>
-          </div>
-          <div class="footer__sections panel">
+        <div class="footer__about set">
+
+          <a class="footer__site-sections" href="#">
+            <h3 class="footer__grey-color">РАЗДЕЛЫ САЙТА</h3>
+            <span class="plus"><i class="icon"></i></span>
+          </a>
+
+          <div class="footer__sections content">
             <div class="footer__about-info">
               <ul class="footer__list">
                 <li class="footer__item"><a class="footer__grey-color" href="#">О компании</a></li>
@@ -268,22 +269,23 @@
                 <li class="footer__item"><a class="footer__grey-color" href="#">Монтаж печатных плат</a></li>
               </ul>
             </div>
+            <div class="footer__contacts">
+              <ul class="footer__list">
+                <li class="footer__item"><a class="footer__grey-color" href="#">Комплектующие</a></li>
+                <li class="footer__item"><a class="footer__grey-color" href="#">Доставка</a></li>
+                <li class="footer__item"><a class="footer__grey-color" href="#">Контакты</a></li>
+              </ul>
+            </div>
           </div>
+
         </div>
 
-        <div class="footer__contacts">
-          <ul class="footer__list">
-            <li class="footer__item"><a class="footer__grey-color" href="#">Комплектующие</a></li>
-            <li class="footer__item"><a class="footer__grey-color" href="#">Доставка</a></li>
-            <li class="footer__item"><a class="footer__grey-color" href="#">Контакты</a></li>
-          </ul>
-        </div>
-
-        <div class="footer__phones">
-          <div class="footer__address">
-            <h3>НАШ ОФИС</h3>
-          </div>
-          <div class="footer__info">
+        <div class="footer__phones set">
+          <a class="footer__address" href="#">
+            <h3 class="footer__grey-color">НАШ ОФИС</h3>
+            <span class="plus"><i class="icon"></i></span>
+          </a>
+          <div class="footer__info content">
             <ul class="footer__list">
               <li>г. Мытищи, Олимпийский проспект, д.10 </li>
               <li><a class="footer__grey-color" href="tel:+74955894050">+7 (495) 589-40-50</a></li>
@@ -330,6 +332,7 @@
   <script src="js/vendor/input-mask.js"></script>
   <script src="js/vendor/swiper-bundle.min.js"></script>
   <script src="js/main.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
   <script>
     const swiper = new Swiper('.swiper-container', {
@@ -349,38 +352,37 @@
 
     });
 
-    //Accordion code
-    // let acc = document.getElementsByClassName("accordion");
-    // let i;
-
-    // for (i = 0; i < acc.length; i++) {
-    //   acc[i].addEventListener("click", function () {
-    //     this.classList.toggle("active");
-    //     let panel = this.nextElementSibling;
-    //     if (panel.style.maxHeight) {
-    //       panel.style.maxHeight = null;
-    //     } else {
-    //       panel.style.maxHeight = panel.scrollHeight + "px";
-    //     }
-    //   });
-    // }
-    //Accordion code
-  </script>
-  <script>
-    var acc = document.getElementsByClassName("accordion");
-    var i;
-
-    for (i = 0; i < acc.length; i++) {
-      acc[i].addEventListener("click", function () {
-        this.classList.toggle("active");
-        var panel = this.nextElementSibling;
-        if (panel.style.maxHeight) {
-          panel.style.maxHeight = null;
-        } else {
-          panel.style.maxHeight = panel.scrollHeight + "px";
-        }
+    //Accordion 
+    if ($(window).width() < 610) {
+      $(document).ready(function () {
+        $(".set > a").on("click", function () {
+          if ($(this).hasClass('active')) {
+            $(this).removeClass("active");
+            $(this).siblings('.content').slideUp(200);
+            $(".set > a span").removeClass("minus").addClass("plus");
+            $('.footer__grid').css("grid-template-rows",
+              "60px 50px 50px 2px 50px 70px 2px 200px 2px 50px 50px");
+          } else {
+            $(".set > a span").removeClass("minus").addClass("plus");
+            $(this).find("span").removeClass("plus").addClass("minus");
+            $(".set > a").removeClass("active");
+            $(this).addClass("active");
+            $('.content').slideUp(200);
+            $(this).siblings('.content').slideDown(200);
+            if ($(this).hasClass('footer__site-sections')) {
+              $('.footer__grid').css("grid-template-rows",
+                "60px 50px 50px 2px 240px 70px 2px 50px 2px 50px 50px");
+            }
+            if ($(this).hasClass('footer__address')) {
+              $('.footer__grid').css("grid-template-rows",
+                "60px 50px 50px 2px 50px 70px 2px 240px 2px 50px 50px");
+            }
+          }
+          return false;
+        });
       });
     }
+    //Accordion 
   </script>
 
 </body>

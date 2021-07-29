@@ -9,16 +9,14 @@
         max-height: 200px;
         padding-top: 50px;
         grid-template-areas:
-            "logo about contacts phones"
-            "social about contacts phones"
+            "logo about about phones"
+            "social about about phones"
             "line line line line"
             "rights devices confidentiality developed-by";
     }
 
     &__logo {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
+        @include flex(row, space-between);
         grid-area: logo;
         width: 190px;
         height: 100px;
@@ -42,6 +40,12 @@
 
     }
 
+    &__sections {
+        @include flex(row, space-between);
+        min-width: 400px;
+        max-height: 170px;
+    }
+
     &__about {
         grid-area: about;
         width: 170px;
@@ -49,10 +53,8 @@
     }
 
     &__contacts {
-        grid-area: contacts;
         width: 150px;
-        height: 100px;
-        padding-top: 40px;
+        height: 70px;
     }
 
     &__phones {
@@ -111,23 +113,14 @@
         height: 100%;
     }
 
-    &__about ul,
-    &__contacts ul,
-    &__phones ul,
-    &__rights li,
-    &__devices li,
-    &__confidentiality li,
-    &__developed-by li {
+    &__list {
         list-style: none;
         padding: 0;
+        margin: 0;
         color: gray;
     }
 
-    &__about a,
-    &__contacts a,
-    &__phones a,
-    &__confidentiality a,
-    &__developed-by a {
+    &__grey-color {
         color: gray;
     }
 
@@ -178,18 +171,23 @@
     @media (max-width: $mobile-width) {
         &__grid {
             grid-template-columns: 1fr 1fr 1fr;
-            grid-template-rows: 1fr 2px 1fr 1fr 2px 1fr;
+            grid-template-rows: 1fr 2px 1fr 1fr 1fr 2px 1fr;
             align-content: space-between;
-            max-height: 200px;
+            max-height: 400px;
             gap: 0px;
             padding-top: 50px;
             grid-template-areas:
                 "logo devices social"
                 "line line line"
                 "about about phones"
-                "contacts . ."
+                "about about ."
+                "about about ."
                 "line2 line2 line2"
                 "confidentiality confidentiality developed-by";
+        }
+
+        &__sections {
+            @include flex(column, space-around);
         }
 
         &__rights {
@@ -231,7 +229,7 @@
 
         &__grid {
             grid-template-columns: 1fr;
-            grid-template-rows: 60px 50px 50px 2px 150px 70px 2px 200px 2px 50px 50px;
+            grid-template-rows: 60px 50px 50px 2px 50px 70px 2px 200px 2px 50px 50px;
             align-content: space-between;
             max-height: 1100px;
             gap: 0px;
@@ -242,7 +240,7 @@
                 "social"
                 "line"
                 "about"
-                "contacts"
+                "about"
                 "line2"
                 "phones"
                 "line3"
@@ -266,7 +264,6 @@
 
         &__contacts {
             height: 70px;
-            margin-top: -20px;
             padding-top: 0;
         }
 
@@ -291,4 +288,119 @@
 
     // @media (max-width: $small-mobile-width) {}
 
+}
+
+@media (max-width: $mobile-low-width) {
+    .set {
+        position: relative;
+        width: 100%;
+        height: auto;
+        background-color: #fff;
+    }
+
+    .set>a {
+        display: block;
+        padding: 25px 20px 25px 30px;
+        text-decoration: none;
+        color: #333;
+        font-weight: 600;
+        font-size: 20px;
+        border-bottom: 1px solid #ddd;
+        -webkit-transition: all 0.2s linear;
+        -moz-transition: all 0.2s linear;
+        transition: all 0.2s linear;
+    }
+
+    .set>a .plus,
+    .set>a .minus {
+        position: relative;
+        float: right;
+        margin-top: -55px;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        transition: 200ms ease;
+        transform: rotate(0deg);
+    }
+
+    .set>a .plus:hover {
+        background: #FF9900;
+        transition: 200ms ease;
+        transform: rotate(-45deg);
+    }
+
+    .set>a.active .minus:hover {
+        background: #FF9900;
+        transition: 200ms ease;
+        transform: rotate(0deg);
+    }
+
+    .set>a .plus .icon,
+    .set>a .minus .icon {
+        position: relative;
+        width: 40px;
+        height: 40px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .set>a .plus .icon::before,
+    .set>a .minus .icon::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: block;
+        width: 25px;
+        height: 1px;
+        background: #FF9900;
+    }
+
+    .set>a .plus:hover .icon::before,
+    .set>a .minus:hover .icon::before,
+    .set>a .plus:hover .icon::after,
+    .set>a .minus:hover .icon::after {
+        background: #fff;
+    }
+
+    .set>a .plus .icon::after,
+    .set>a .minus .icon::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: block;
+        width: 1px;
+        height: 25px;
+        background: #FF9900;
+    }
+
+    .set>a .plus:hover .icon::before,
+    .set>a .plus:hover .icon::after {
+        background: #fff;
+    }
+
+    .set>a.active .minus {
+        transition: 200ms ease;
+        transform: rotate(45deg);
+    }
+
+    .content {
+        position: relative;
+        width: 100%;
+        font-size: 18px;
+        height: auto;
+        background-color: #fff;
+        border-bottom: 1px solid #ddd;
+        display: none;
+    }
+
+    .content p {
+        padding: 25px 30px;
+        margin: 0;
+        color: #333;
+    }
 }
