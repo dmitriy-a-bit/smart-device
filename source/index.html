@@ -53,7 +53,7 @@
               </svg>
             </a>
             <a class="header__phone-text" href="tel:+74950005252">+7 (495) 000 52 52</a></div>
-          <button class="header__call" type="submit">ЗАКАЗАТЬ ЗВОНОК</button>
+          <button class="header__call open-modal" type="submit">ЗАКАЗАТЬ ЗВОНОК</button>
         </div>
 
       </div>
@@ -328,6 +328,87 @@
 
     </div>
   </footer>
+
+  <div class="overlay"></div>
+  <div class="modal-contact">
+    <button class="modal-contact__close" type="button">Назад</button>
+    <p class="modal-contact__text">Закажите звонок</p>
+    <p class="modal-contact__description">Оставьте контакты, мы проконсультируем<br> вас бесплатно в удобное время</p>
+    <form class="modal-contact__form" action="/echo" method="post">
+      <div class="field">
+        <input class="modal-contact__item field__input" type="text" name="name" id="contact-name" required>
+        <label class="field__label" for="contact-name" data-first="Имя"></label>
+      </div>
+      <div class="field">
+        <input class="modal-contact__item field__input" type="text" name="email" id="contact-email" required>
+        <label class="field__label" for="contact-email" data-first="Телефон"></label>
+      </div>
+      <div class="field">
+        <textarea class="modal-contact__text-field__input field__input" name="text" rows="6" id="input-text"
+          required></textarea>
+        <label class="field__label" for="input-text" data-first="Ваш вопрос"></label>
+      </div>
+      <div class="modal-contact__btn">
+        <button class=" btn btn--middle btn--narrow" type="submit" name="send">Отправить</button>
+      </div>
+      <div class="modal__checkbox-area">
+        <div>
+          <input class="modal__checkbox" id="modal__input" type="checkbox" checked>
+          <label for="modal__input"></label>
+        </div>
+        <div>
+          <p class="modal__agree">Я согласен на обработку персональных данных</p>
+        </div>
+    </form>
+  </div>
+  <script>
+    let openContact = document.querySelector('.open-modal');
+    let modalContact = document.querySelector('.modal-contact');
+    let closeContact = modalContact.querySelector('.modal-contact__close');
+    let overlay = document.querySelector('.overlay');
+
+    if (modalContact) {
+      let formContact = modalContact.querySelector('.modal-contact__form');
+      let nameContact = modalContact.querySelector('[name=name]');
+      let emailContact = modalContact.querySelector('[name=email]');
+      let textContact = modalContact.querySelector('[name=text]');
+      let storageName = localStorage.getItem('nameContact');
+      let storageEmail = localStorage.getItem('emailContact');
+
+      openContact.addEventListener('click', function (event) {
+        event.preventDefault();
+        modalContact.classList.add('modal-contact--show');
+        overlay.classList.add('overlay--show');
+      });
+
+      formContact.addEventListener('submit', function (event) {
+        if (nameContact.value || emailContact.value || textContact.value) {
+          localStorage.setItem('nameContact', nameContact.value);
+          localStorage.setItem('emailContact', emailContact.value);
+        }
+      });
+
+      closeContact.addEventListener('click', function (event) {
+        event.preventDefault();
+        modalContact.classList.remove('modal-contact--show');
+        overlay.classList.remove('overlay--show');
+      });
+
+      overlay.addEventListener('click', function (event) {
+        modalContact.classList.remove('modal-contact--show');
+        overlay.classList.remove('overlay--show');
+      });
+
+      window.addEventListener('keydown', function (event) {
+        if (event.keyCode === 27) {
+          if (modalContact.classList.contains('modal-contact--show')) {
+            modalContact.classList.remove('modal-contact--show');
+            overlay.classList.remove('overlay--show');
+          }
+        }
+      });
+    };
+  </script>
 
   <script src="js/vendor/input-mask.js"></script>
   <script src="js/vendor/swiper-bundle.min.js"></script>
